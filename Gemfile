@@ -18,7 +18,7 @@ gem 'uglifier', '~> 4.2.0'
 gem 'jquery-rails', '~> 4.4'
 # Use CoffeeScript for .coffee assets and views
 # gem 'coffee-rails', '~> 5.0'
-# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+# Turbolinks makes navigating your web application faster. Read more: https://g$
 gem 'turbolinks', '~> 5.2.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.11'
@@ -26,7 +26,6 @@ gem 'jbuilder', '~> 2.11'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1'
-
 # AWS S3
 gem 'aws-sdk-s3', '~> 1.114'
 # Webrick
@@ -43,10 +42,12 @@ gem 'mail', '>= 2.8.0.rc1'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.13', require: false
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', '~> 11.1.3', platforms: %i[mri mingw x64_mingw]
+# Add the rails_admin gem here
+gem 'rails_admin', '~> 2.0'
 
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger con$
+  gem 'byebug', '~> 11.1.3', platforms: %i[mri mingw x64_mingw]
   # Added by Altcademy.com
   gem 'awesome_print', '~> 1.9'
   gem 'dotenv-rails', '~> 2.8'
@@ -58,13 +59,12 @@ group :development, :test do
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
+  # Access an interactive console on exception pages or by calling 'console' an$
   gem 'listen', '~> 3.7.1'
   gem 'web-console', '>= 4.2'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  # Spring speeds up development by keeping your application running in the bac$
   gem 'spring', '< 3.0'
   gem 'spring-watcher-listen', '~> 2.0.1'
-
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
 end
@@ -73,3 +73,4 @@ group :production do
   # Use pg as the database for Active Record
   gem 'pg', '~> 1.4.3'
 end
+
