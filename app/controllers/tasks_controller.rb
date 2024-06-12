@@ -1,11 +1,11 @@
 class TasksController < ApplicationController
   def index
-    # ...
+    @tasks = Task.all
+    render 'tasks/index' # can be omitted
   end
 
   def create
     @task = Task.new(task_params)
-
     if @task.save
       render 'tasks/create' # can be omitted
     end
@@ -23,7 +23,7 @@ class TasksController < ApplicationController
   def mark_complete
     @task = Task.find_by(id: params[:id])
     if @task && @task.update(completed: true)
-      render 'tasks/update'
+      render 'tasks/mark_complete'
     end
   end
 
@@ -35,6 +35,9 @@ class TasksController < ApplicationController
   end
 
   private
-  # ...
+
+  def task_params
+    params.require(:task).permit(:content)
+  end
 end
 
