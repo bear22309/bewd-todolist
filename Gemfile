@@ -3,52 +3,48 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+# Rails gem version
 gem 'rails', '~> 6.1.6.1'
-# Use Puma as the app server
-gem 'puma', '>= 5.6.4'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 6.0'
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '~> 4.2.0'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'mini_racer', platforms: :ruby
 
-# Use jquery as the JavaScript library
+# App server
+gem 'puma', '>= 5.6.4'
+
+# Stylesheets
+gem 'sass-rails', '~> 6.0'
+
+# JavaScript compressor
+gem 'uglifier', '~> 4.2.0'
+
+# JavaScript library
 gem 'jquery-rails', '~> 4.4'
-# Use CoffeeScript for .coffee assets and views
-# gem 'coffee-rails', '~> 5.0'
-# Turbolinks makes navigating your web application faster. Read more: https://g$
+
+# Navigation library
 gem 'turbolinks', '~> 5.2.1'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+
+# JSON API builder
 gem 'jbuilder', '~> 2.11'
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
-# Use ActiveModel has_secure_password
+
+# Secure password management
 gem 'bcrypt', '~> 3.1'
-# AWS S3
+
+# AWS S3 support
 gem 'aws-sdk-s3', '~> 1.114'
-# Webrick
+
+# Webrick server
 gem 'webrick', '~> 1.7'
-# Mail gem
+
+# Email support
 gem 'mail', '>= 2.8.0.rc1'
 
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Reduces boot times through caching; required in config/boot.rb
+# Boot time reduction
 gem 'bootsnap', '>= 1.13', require: false
 
-# Add the rails_admin gem here
+# Rails admin interface
 gem 'rails_admin', '~> 2.0'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger con$
+  # Debugging tools
   gem 'byebug', '~> 11.1.3', platforms: %i[mri mingw x64_mingw]
-  # Added by Altcademy.com
   gem 'awesome_print', '~> 1.9'
   gem 'dotenv-rails', '~> 2.8'
   gem 'factory_bot_rails', '~> 6.2'
@@ -59,18 +55,21 @@ group :development, :test do
 end
 
 group :development do
-  # Access an interactive console on exception pages or by calling 'console' an$
+  # Development tools
   gem 'listen', '~> 3.7.1'
   gem 'web-console', '>= 4.2'
-  # Spring speeds up development by keeping your application running in the bac$
   gem 'spring', '< 3.0'
   gem 'spring-watcher-listen', '~> 2.0.1'
-  # Use sqlite3 as the database for Active Record
+  # Use sqlite3 as the database for Active Record in development
   gem 'sqlite3', '~> 1.4'
 end
 
 group :production do
-  # Use pg as the database for Active Record
+  # Use pg as the database for Active Record in production
   gem 'pg', '~> 1.4.3'
+  # Ensure you have the bundler gem for production environment
+  gem 'bundler', '~> 2.0.2'
 end
+
+# Heroku requires the pg gem for production database
 
